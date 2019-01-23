@@ -26,3 +26,9 @@
 *.exe
 *.out
 *.app
+
+FinalGraficos1/\.vs/
+
+FinalGraficos1/bin/
+
+FinalGraficos1/FinalGraficos1/Obj/
