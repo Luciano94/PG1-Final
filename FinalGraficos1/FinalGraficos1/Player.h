@@ -10,14 +10,16 @@ class Player{
 
 protected:
 	float speed;
+	virtual void Input(float dt) = 0;
+	virtual void BoundingCheck() = 0;
 	
 	sf::RectangleShape character;
 	sf::Texture * texture;
 public:
 	Player(string texturePath);
 	~Player();
-	void Update();
 	void Draw(sf::RenderWindow &win);
+	virtual void Update(float dt)=0;
 };
 
 #endif // !PLAYER_H
