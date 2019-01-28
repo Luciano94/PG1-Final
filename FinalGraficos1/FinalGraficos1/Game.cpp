@@ -2,16 +2,22 @@
 
 
 
-Game::Game()
-{
+Game::Game(){
+
 }
 
+void Game::Start(){
+	window.create(sf::VideoMode(800, 600), "SFML works!");
+	p1 = new Player1("../Assets/Sprites/Player.png");
+	p2 = new Player2("../Assets/Sprites/Player.png");
+}
 
 Game::~Game()
 {
 }
 
 void Game::Update(){
+
 	while (window.isOpen())
 	{
 		sf::Event event;
@@ -22,19 +28,16 @@ void Game::Update(){
 		}
 
 		window.clear();
+		Draw();
 		window.display();
 	}
-}
-
-void Game::Start()
-{
-	window.create(sf::VideoMode(800, 600), "SFML works!");
 }
 
 void Game::Stop(){
 	
 }
 
-void Game::Draw()
-{
+void Game::Draw(){
+	p1->Draw(window);
+	p2->Draw(window);
 }
