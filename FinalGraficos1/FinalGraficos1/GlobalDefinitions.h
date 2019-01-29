@@ -20,7 +20,7 @@ namespace Constants {
 	const int DIV_SPAWN_X = 599;
 	const int DIV_SPAWN_Y = 0;
 	/*OBSTACLE*/
-	const int O_SPEED = 200;
+	const int O_SPEED = 20;
 	const int O_WIDTH = 60;
 	const int O_HEIGHT = 60;
 	const string O_TEXTURE = "../Assets/Sprites/Player.png";

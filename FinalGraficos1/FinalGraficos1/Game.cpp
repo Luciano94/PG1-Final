@@ -12,8 +12,8 @@ void Game::Start(){
 	p1 = new Player1(P1_TEXTURE);
 	p2 = new Player2(P2_TEXTURE);
 	UI = new InterfaceManager();
-	obs = new Obstacle(O_TEXTURE, 1);
-	obs->Init();
+	obs1 = new ObstacleS1(O_TEXTURE);
+	obs2 = new ObstacleS2(O_TEXTURE);
 }
 
 Game::~Game(){
@@ -43,19 +43,22 @@ void Game::Stop(){
 	delete p1;
 	delete p2;
 	delete UI;
-	delete obs;
+	delete obs1;
+	delete obs2;
 }
 
 void Game::Draw(){
 	p1->Draw(window);
 	p2->Draw(window);
 	UI->Draw(window);
-	obs->Draw(window);
+	obs1->Draw(window);
+	obs2->Draw(window);
 }
 
 void Game::CallUpdates(){
 	dt->Update();
-	obs->Update(dt->Get());
+	obs1->Update(dt->Get());
+	obs2->Update(dt->Get());
 	p1->Update(dt->Get());
 	p2->Update(dt->Get());
 }

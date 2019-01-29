@@ -7,16 +7,15 @@
 using namespace std;
 using namespace Constants;
 class Obstacle{
-private:
+protected:
 	float speed;
-	int screen;
 	sf::RectangleShape obs;
 	sf::Texture * texture;
 public:
-	Obstacle(string texturePath, int Screen);
+	Obstacle(string texturePath);
 	~Obstacle();
 	void Update(float dt);
-	void Init();
+	virtual void Init()=0;
 	void Draw(sf::RenderWindow &win);
 };
 
