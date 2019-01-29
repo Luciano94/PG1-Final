@@ -8,13 +8,11 @@ using namespace Constants;
 
 class GameManager
 {
-private:
-	sf::RectangleShape division;
-	sf::Texture * texture;
+
 public:
 	GameManager(string texturePath);
 	~GameManager();
-	void Draw(sf::RenderWindow &win);
+
 };
 
 #endif // !GAMEMANAGER_H

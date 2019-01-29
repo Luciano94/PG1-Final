@@ -18,7 +18,7 @@ void DeltaTime::Update(){
 	deltaclock.restart();
 }
 
-double DeltaTime::Get(){
+float DeltaTime::Get(){
 	return deltaTime;
 }
 

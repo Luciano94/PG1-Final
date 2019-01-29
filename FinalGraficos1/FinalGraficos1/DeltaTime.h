@@ -13,7 +13,7 @@ private:
 public:
 	static DeltaTime * GetInstance();
 	void Update();
-	double Get();
+	float Get();
 	~DeltaTime();
 };
 #endif

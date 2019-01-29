@@ -8,14 +8,16 @@ Game::Game(){
 
 void Game::Start(){
 	window.create(sf::VideoMode(W_WIDTH, W_HEIGHT), W_TITTLE);
+	dt = DeltaTime::GetInstance();
 	p1 = new Player1(P1_TEXTURE);
 	p2 = new Player2(P2_TEXTURE);
-	GM = new GameManager(DIV_TEXTURE);
-	dt = DeltaTime::GetInstance();
+	UI = new InterfaceManager();
+	obs = new Obstacle(O_TEXTURE, 1);
+	obs->Init();
 }
 
-Game::~Game()
-{
+Game::~Game(){
+
 }
 
 void Game::Update(){
@@ -38,17 +40,22 @@ void Game::Update(){
 }
 
 void Game::Stop(){
-	
+	delete p1;
+	delete p2;
+	delete UI;
+	delete obs;
 }
 
 void Game::Draw(){
 	p1->Draw(window);
 	p2->Draw(window);
-	GM->Draw(window);
+	UI->Draw(window);
+	obs->Draw(window);
 }
 
 void Game::CallUpdates(){
 	dt->Update();
+	obs->Update(dt->Get());
 	p1->Update(dt->Get());
 	p2->Update(dt->Get());
 }

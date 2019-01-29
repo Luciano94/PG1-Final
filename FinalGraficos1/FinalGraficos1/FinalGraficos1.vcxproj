@@ -178,6 +178,8 @@ copy "$(SolutionDir)Libs\SFML\SFML-2.5.1-x64\\bin\sfml-window-2.dll" "$(OutDir)"
     <ClInclude Include="Game.h" />
     <ClInclude Include="GameManager.h" />
     <ClInclude Include="GlobalDefinitions.h" />
+    <ClInclude Include="InterfaceManager.h" />
+    <ClInclude Include="Obstacle.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="Player1.h" />
     <ClInclude Include="Player2.h" />
@@ -186,7 +188,9 @@ copy "$(SolutionDir)Libs\SFML\SFML-2.5.1-x64\\bin\sfml-window-2.dll" "$(OutDir)"
     <ClCompile Include="DeltaTime.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="GameManager.cpp" />
+    <ClCompile Include="InterfaceManager.cpp" />
     <ClCompile Include="Main.cpp" />
+    <ClCompile Include="Obstacle.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="Player1.cpp" />
     <ClCompile Include="Player2.cpp" />

@@ -5,8 +5,7 @@ Player2::Player2(string texturePath) :Player(texturePath){
 }
 
 
-Player2::~Player2()
-{
+Player2::~Player2(){
 }
 
 void Player2::Update(float dt){
@@ -24,7 +23,7 @@ void Player2::Input(float dt){
 
 void Player2::BoundingCheck(){
 	if (character.getPosition().x < P2_LEFT_BOUNDING)
-		character.setPosition(P2_LEFT_BOUNDING, W_HEIGHT - P_HEIGHT);
+		character.setPosition(P2_LEFT_BOUNDING, 0);
 	if (character.getPosition().x > P2_RIGTH_BOUNDING)
-		character.setPosition(P2_RIGTH_BOUNDING, W_HEIGHT - P_HEIGHT);
+		character.setPosition(P2_RIGTH_BOUNDING, 0);
 }

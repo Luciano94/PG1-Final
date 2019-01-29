@@ -3,7 +3,8 @@
 #include<iostream>
 #include "Player1.h"
 #include "Player2.h"
-#include "GameManager.h"
+#include "Obstacle.h"
+#include "InterfaceManager.h"
 #include "GlobalDefinitions.h"
 #include "DeltaTime.h"
 
@@ -16,7 +17,8 @@ private:
 	sf::RenderWindow window;
 	Player1 * p1;
 	Player2 * p2;
-	GameManager * GM;
+	Obstacle * obs;
+	InterfaceManager * UI;
 	DeltaTime * dt;
 	void Draw();
 	void CallUpdates();
