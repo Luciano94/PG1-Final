@@ -1,13 +1,13 @@
 #include "DeltaTime.h"
 
-DeltaTime* DeltaTime::Instance = nullptr;
+DeltaTime* DeltaTime::Instance = NULL;
 
 DeltaTime::DeltaTime(){
 	deltaTime = 0;
 }
 
 DeltaTime * DeltaTime::GetInstance(){
-	if (Instance == nullptr) {
+	if (Instance == NULL) {
 		Instance = new DeltaTime();
 	}
 	return Instance;

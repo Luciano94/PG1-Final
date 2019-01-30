@@ -3,9 +3,9 @@
 #include<iostream>
 #include "Player1.h"
 #include "Player2.h"
-#include "ObstacleS1.h"
-#include "ObstacleS2.h"
+#include "ObstacleManager.h"
 #include "InterfaceManager.h"
+#include "GameManager.h"
 #include "GlobalDefinitions.h"
 #include "DeltaTime.h"
 
@@ -19,10 +19,10 @@ private:
 	sf::RenderWindow window;
 	Player1 * p1;
 	Player2 * p2;
-	ObstacleS1 * obs1;
-	ObstacleS2 * obs2;
 	InterfaceManager * UI;
+	ObstacleManager * ObsManager;
 	DeltaTime * dt;
+	GameManager * gm;
 //methods	
 	void Draw();
 	void CallUpdates();

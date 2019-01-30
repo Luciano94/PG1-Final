@@ -42,10 +42,10 @@
     <ClInclude Include="Obstacle.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="ObstacleS1.h">
+    <ClInclude Include="ObstacleManager.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="ObstacleS2.h">
+    <ClInclude Include="Boost.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -77,10 +77,10 @@
     <ClCompile Include="Obstacle.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="ObstacleS1.cpp">
+    <ClCompile Include="ObstacleManager.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="ObstacleS2.cpp">
+    <ClCompile Include="Boost.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

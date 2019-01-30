@@ -174,27 +174,27 @@ copy "$(SolutionDir)Libs\SFML\SFML-2.5.1-x64\\bin\sfml-window-2.dll" "$(OutDir)"
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Boost.h" />
     <ClInclude Include="DeltaTime.h" />
     <ClInclude Include="Game.h" />
     <ClInclude Include="GameManager.h" />
     <ClInclude Include="GlobalDefinitions.h" />
     <ClInclude Include="InterfaceManager.h" />
     <ClInclude Include="Obstacle.h" />
-    <ClInclude Include="ObstacleS1.h" />
-    <ClInclude Include="ObstacleS2.h" />
+    <ClInclude Include="ObstacleManager.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="Player1.h" />
     <ClInclude Include="Player2.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Boost.cpp" />
     <ClCompile Include="DeltaTime.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="GameManager.cpp" />
     <ClCompile Include="InterfaceManager.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="Obstacle.cpp" />
-    <ClCompile Include="ObstacleS1.cpp" />
-    <ClCompile Include="ObstacleS2.cpp" />
+    <ClCompile Include="ObstacleManager.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="Player1.cpp" />
     <ClCompile Include="Player2.cpp" />

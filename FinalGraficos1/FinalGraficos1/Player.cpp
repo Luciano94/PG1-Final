@@ -17,3 +17,4 @@ Player::~Player(){
 void Player::Draw(sf::RenderWindow &win){
 	win.draw(character);
 }
+

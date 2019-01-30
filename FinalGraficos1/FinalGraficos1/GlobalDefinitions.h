@@ -19,10 +19,12 @@ namespace Constants {
 	const int DIV_HEIGHT = 600;
 	const int DIV_SPAWN_X = 599;
 	const int DIV_SPAWN_Y = 0;
+	const string KM_FONT = "../Assets/Fonts/destructobeambb_bold.ttf";
 	/*OBSTACLE*/
-	const int O_SPEED = 20;
+	const int O_SPEED = 100;
 	const int O_WIDTH = 60;
 	const int O_HEIGHT = 60;
+	const int O_RESPAWNTIME = 30;
 	const string O_TEXTURE = "../Assets/Sprites/Player.png";
 	/*PLAYER*/
 	const int P_WIDTH = 60;

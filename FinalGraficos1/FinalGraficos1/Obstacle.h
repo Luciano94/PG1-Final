@@ -1,22 +1,32 @@
 #ifndef OBSTACLE_H
 #define OBSTACLE_H
+#include <iostream>
+#include<sys/types.h>
 #include<SFML/Graphics.hpp>
 #include"GlobalDefinitions.h"
-#include <iostream>
 
-using namespace std;
 using namespace Constants;
+using namespace std;
+
+
 class Obstacle{
-protected:
+private:
+	/*ATTRIBUTES*/
 	float speed;
+	float respawn;
+	float actTime;
+	bool isActive;
 	sf::RectangleShape obs;
 	sf::Texture * texture;
+
+	void Init();
+	void Move(float dt);
 public:
-	Obstacle(string texturePath);
+	Obstacle(string texturePath, float posX);
 	~Obstacle();
 	void Update(float dt);
-	virtual void Init()=0;
 	void Draw(sf::RenderWindow &win);
+	void SetSpeed(float _speed);
 };
 
 #endif // !OBSTACLE_H
