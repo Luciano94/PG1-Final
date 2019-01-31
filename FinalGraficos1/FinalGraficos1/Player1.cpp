@@ -21,9 +21,9 @@ void Player1::Input(float dt){
 
 void Player1::BoundingCheck(){
 	if (character.getPosition().x < P1_LEFT_BOUNDING)
-		character.setPosition(P1_LEFT_BOUNDING,0);
+		character.setPosition(P1_LEFT_BOUNDING,P1_SPAWN_Y);
 	if (character.getPosition().x > P1_RIGTH_BOUNDING)
-		character.setPosition(P1_RIGTH_BOUNDING,0);
+		character.setPosition(P1_RIGTH_BOUNDING,P1_SPAWN_Y);
 }
 
 Player1::~Player1()

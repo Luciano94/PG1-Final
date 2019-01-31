@@ -32,7 +32,8 @@ public:
 	void Update(float dt);
 	float GetSpeedS1();
 	float GetSpeedS2();
-
+	void SetSpeedS1(float _speed);
+	void SetSpeedS2(float _speed);
 };
 #endif
 

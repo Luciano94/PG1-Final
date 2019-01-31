@@ -20,9 +20,9 @@ ObstacleManager::ObstacleManager(){
 void ObstacleManager::CreateListOfS1(){
 	listOfS1 = new list<Obstacle*>();
 	Obstacle * obs;
-	float posX = 0;
-	for (int i = 0; i < 10; i++){
-		obs = new Obstacle(O_TEXTURE, posX);
+	float posX = 60;
+	for (int i = 0; i < 8; i++){
+		obs = new Obstacle(posX);
 		listOfS1->push_back(obs);
 		posX += 60;
 	}
@@ -31,9 +31,9 @@ void ObstacleManager::CreateListOfS1(){
 void ObstacleManager::CreateListOfS2(){
 	listOfS2 = new list<Obstacle*>();
 	Obstacle * obs;
-	float posX = 600;
-	for (int i = 0; i < 10; i++) {
-		obs = new Obstacle(O_TEXTURE, posX);
+	float posX = 660;
+	for (int i = 0; i < 8; i++) {
+		obs = new Obstacle(posX);
 		listOfS1->push_back(obs);
 		posX += 60;
 	}
@@ -88,6 +88,18 @@ float ObstacleManager::GetSpeedS1(){
 
 float ObstacleManager::GetSpeedS2() {
 	return obsSpeedS2;
+}
+
+void ObstacleManager::SetSpeedS1(float _speed){
+	for (list<Obstacle*>::iterator iter = listOfS1->begin();
+		iter != listOfS1->end(); ++iter)
+		(*iter)->SetSpeed(_speed);
+}
+
+void ObstacleManager::SetSpeedS2(float _speed){
+	for (list<Obstacle*>::iterator iter = listOfS2->begin();
+		iter != listOfS2->end(); ++iter)
+		(*iter)->SetSpeed(_speed);
 }
 
 void ObstacleManager::UpdateObs(float dt){

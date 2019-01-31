@@ -11,7 +11,14 @@ using namespace Constants;
 class InterfaceManager
 {
 private:
+	//Gameplay
 	sf::RectangleShape division;
+	sf::RectangleShape sideWalkW1XR;
+	sf::RectangleShape sideWalkW1XL;
+	sf::RectangleShape sideWalkW2XR;
+	sf::RectangleShape sideWalkW2XL;
+	sf::RectangleShape yellowLineW1;
+	sf::RectangleShape yellowLineW2;
 	sf::Font fontKm;
 	sf::Text KMTxtP1;
 	sf::Text KMTxtP2;

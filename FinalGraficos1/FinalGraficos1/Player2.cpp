@@ -23,7 +23,7 @@ void Player2::Input(float dt){
 
 void Player2::BoundingCheck(){
 	if (character.getPosition().x < P2_LEFT_BOUNDING)
-		character.setPosition(P2_LEFT_BOUNDING, 0);
+		character.setPosition(P2_LEFT_BOUNDING, P2_SPAWN_Y);
 	if (character.getPosition().x > P2_RIGTH_BOUNDING)
-		character.setPosition(P2_RIGTH_BOUNDING, 0);
+		character.setPosition(P2_RIGTH_BOUNDING, P2_SPAWN_Y);
 }

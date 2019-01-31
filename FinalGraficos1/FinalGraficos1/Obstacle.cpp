@@ -1,8 +1,8 @@
 #include "Obstacle.h"
 
-Obstacle::Obstacle(string texturePath, float posX):speed(O_SPEED){
+Obstacle::Obstacle(float posX):speed(O_SPEED){
 	texture = new sf::Texture();
-	texture->loadFromFile(texturePath);
+	texture->loadFromFile(O_TEXTURE);
 	obs.setSize(sf::Vector2f(O_WIDTH, O_HEIGHT));
 	obs.setTexture(texture);
 	obs.setPosition(posX, W_HEIGHT + O_HEIGHT);

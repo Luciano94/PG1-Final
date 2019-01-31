@@ -1,7 +1,6 @@
 #ifndef OBSTACLE_H
 #define OBSTACLE_H
 #include <iostream>
-#include<sys/types.h>
 #include<SFML/Graphics.hpp>
 #include"GlobalDefinitions.h"
 
@@ -22,7 +21,7 @@ private:
 	void Init();
 	void Move(float dt);
 public:
-	Obstacle(string texturePath, float posX);
+	Obstacle(float posX);
 	~Obstacle();
 	void Update(float dt);
 	void Draw(sf::RenderWindow &win);
