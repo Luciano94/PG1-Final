@@ -42,8 +42,8 @@ void Boost::Update(float dt){
 		actTime += dt;
 		if (actTime >= respawn) {
 			float posx = (float)(rand() % (B_SPAWNX1 + win)) + (B_SPAWNX2 + win);
-			if (posx > W2_XR - B_WIDTH)
-				posx = W2_XR - B_WIDTH;
+			if (posx > P2_RIGTH_BOUNDING)
+				posx = P2_RIGTH_BOUNDING;
 			boost.setPosition(posx, W_HEIGHT + B_HEIGHT);
 			respawn = (float)(rand() % B_MAXTIME) + B_MINTIME;
 			speed = (float)(rand() % B_SPEEDMIN) + B_SPEEDMAX;
