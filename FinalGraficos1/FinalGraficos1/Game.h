@@ -8,6 +8,7 @@
 #include "GameManager.h"
 #include "GlobalDefinitions.h"
 #include "DeltaTime.h"
+#include "Boost.h"
 
 using namespace std;
 using namespace Constants;
@@ -17,8 +18,13 @@ class Game{
 private:
 //attribute
 	sf::RenderWindow window;
+
 	Player1 * p1;
 	Player2 * p2;
+
+	Boost * b1;
+	Boost * b2;
+
 	InterfaceManager * UI;
 	ObstacleManager * ObsManager;
 	DeltaTime * dt;
