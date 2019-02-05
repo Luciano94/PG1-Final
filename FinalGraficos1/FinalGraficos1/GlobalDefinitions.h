@@ -4,6 +4,14 @@
 using namespace std;
 
 namespace Constants {
+	//States
+	enum GameStates {
+		Menu = 0,
+		Gameplay,
+		P1WinScreen,
+		P2WinScreen,
+		Count,
+	};
 	/*WINDOW*/
 	const int W_WIDTH = 1200;
 	const int W_HEIGHT = 600;
@@ -23,6 +31,7 @@ namespace Constants {
 	//UI
 	const string KM_FONT = "../Assets/Fonts/destructobeambb_bold.ttf";
 	const int FONT_SIZE = 18;
+	const int TITTLE_SIZE = 62;
 	const float KM_W1_X = 60;
 	const float KM_W2_X = 660;
 	//Enviroment W1
@@ -44,10 +53,10 @@ namespace Constants {
 	const int SW2L_SPAWN_X = 601;
 	const int SW2L_SPAWN_Y = 0;
 	/*OBSTACLE*/
-	const int O_SPEED = 100;
+	const int O_SPEED = 200;
 	const int O_WIDTH = 60;
 	const int O_HEIGHT = 60;
-	const int O_RESPAWNTIME = 30;
+	const int O_RESPAWNTIME = 10;
 	const string O_TEXTURE = "../Assets/Sprites/Player.png";
 	/*BOOST*/
 	const int B_WIDTH = 60;
@@ -58,11 +67,12 @@ namespace Constants {
 	const int B_MAXTIME = 30;
 	const int B_SPAWNX1 = 200;
 	const int B_SPAWNX2 = 200;
+	const int B_PLUS_SPEED = 100;
 	const string B_TEXTURE = "../Assets/Sprites/Boost.png";
 	/*PLAYER*/
 	const int P_WIDTH = 60;
 	const int P_HEIGHT = 60;
-	const float P_SPEED = 300;
+	const float P_SPEED = 500;
 	//player 1
 	const int P1_SPAWN_X = 270;
 	const int P1_SPAWN_Y = 60;

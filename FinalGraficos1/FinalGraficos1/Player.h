@@ -20,6 +20,7 @@ public:
 	~Player();
 	void Draw(sf::RenderWindow &win);
 	virtual void Update(float dt)=0;
+	sf::Vector2f GetPos();
 };
 
 #endif // !PLAYER_H

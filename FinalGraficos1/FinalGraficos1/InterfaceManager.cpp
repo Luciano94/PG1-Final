@@ -49,6 +49,20 @@ InterfaceManager::InterfaceManager(){
 	KMTxtP2.setFillColor(sf::Color::White);
 	KMTxtP2.setStyle(sf::Text::Bold);
 	KMTxtP2.setPosition(KM_W2_X, 0);
+	/*WinTxt P1*/
+	winTxtP1.setFont(fontKm);
+	winTxtP1.setString("PLAYER 1 WIN");
+	winTxtP1.setCharacterSize(TITTLE_SIZE);
+	winTxtP1.setFillColor(sf::Color::White);
+	winTxtP1.setStyle(sf::Text::Bold);
+	winTxtP1.setPosition(400,250);
+	/*WinTxt P2*/
+	winTxtP2.setFont(fontKm);
+	winTxtP2.setString("PLAYER 2 WIN");
+	winTxtP2.setCharacterSize(TITTLE_SIZE);
+	winTxtP2.setFillColor(sf::Color::White);
+	winTxtP2.setStyle(sf::Text::Bold);
+	winTxtP2.setPosition(400, 250);
 }
 
 
@@ -57,18 +71,50 @@ InterfaceManager::~InterfaceManager(){
 }
 
 void InterfaceManager::Update(){
-	string km = to_string((int)(gm->GetTime() * obsM->GetSpeedS1())/10) + " KM";
-	KMTxtP1.setString(km);
-	km = to_string((int)(gm->GetTime() * obsM->GetSpeedS2())/10) + " KM";
-	KMTxtP2.setString(km);
+	string km;
+	switch (gm->getActualState()){
+	case Constants::Menu:
+		break;
+	case Constants::Gameplay:
+		km = to_string((int)(gm->GetTime() * obsM->GetSpeedS1())/10) + " KM";
+		KMTxtP1.setString(km);
+		km = to_string((int)(gm->GetTime() * obsM->GetSpeedS2())/10) + " KM";
+		KMTxtP2.setString(km);
+		break;
+	case Constants::P1WinScreen:
+		break;
+	case Constants::P2WinScreen:
+		break;
+	case Constants::Count:
+		break;
+	default:
+		break;
+	}
 }
 
 void InterfaceManager::Draw(sf::RenderWindow & win){
-	win.draw(division);
-	win.draw(sideWalkW1XL);
-	win.draw(sideWalkW1XR);
-	win.draw(sideWalkW2XL);
-	win.draw(sideWalkW2XR);
-	win.draw(KMTxtP1);
-	win.draw(KMTxtP2);
+	switch (gm->getActualState())
+	{
+	case Constants::Menu:
+		break;
+	case Constants::Gameplay:
+		win.draw(division);
+		win.draw(sideWalkW1XL);
+		win.draw(sideWalkW1XR);
+		win.draw(sideWalkW2XL);
+		win.draw(sideWalkW2XR);
+		win.draw(KMTxtP1);
+		win.draw(KMTxtP2);
+		break;
+	case Constants::P1WinScreen:
+		win.draw(winTxtP1);
+		break;
+	case Constants::P2WinScreen:
+		win.draw(winTxtP2);
+		break;
+	case Constants::Count:
+		break;
+	default:
+		break;
+	}
 }

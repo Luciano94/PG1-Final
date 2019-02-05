@@ -49,3 +49,7 @@ void Obstacle::Draw(sf::RenderWindow & win){
 void Obstacle::SetSpeed(float _speed) {
 	speed = _speed;
 }
+
+sf::Vector2f Obstacle::GetPos(){
+	return obs.getPosition();
+}

@@ -175,6 +175,7 @@ copy "$(SolutionDir)Libs\SFML\SFML-2.5.1-x64\\bin\sfml-window-2.dll" "$(OutDir)"
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="Boost.h" />
+    <ClInclude Include="CollisionManager.h" />
     <ClInclude Include="DeltaTime.h" />
     <ClInclude Include="Game.h" />
     <ClInclude Include="GameManager.h" />
@@ -188,6 +189,7 @@ copy "$(SolutionDir)Libs\SFML\SFML-2.5.1-x64\\bin\sfml-window-2.dll" "$(OutDir)"
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Boost.cpp" />
+    <ClCompile Include="CollisionManager.cpp" />
     <ClCompile Include="DeltaTime.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="GameManager.cpp" />

@@ -2,6 +2,10 @@
 #define OBSTACLEMANAGER_H
 #include "Obstacle.h"
 #include "GlobalDefinitions.h"
+#include "Player1.h"
+#include "Player2.h"
+#include "CollisionManager.h"
+#include "GameManager.h"
 #include <list>
 
 using namespace Constants;
@@ -12,6 +16,9 @@ private:
 	list<Obstacle*> * listOfS1;
 	list<Obstacle*> * listOfS2;
 
+	CollisionManager * cM;
+	GameManager * gM;
+	
 	float obsSpeedS1;
 	float obsSpeedS2;
 
@@ -30,10 +37,11 @@ public:
 	~ObstacleManager();
 	void Draw(sf::RenderWindow &win);
 	void Update(float dt);
+	void CheckCollisions(Player1 * p1, Player2 * p2);
 	float GetSpeedS1();
 	float GetSpeedS2();
-	void SetSpeedS1(float _speed);
-	void SetSpeedS2(float _speed);
+	void BoostSpeedS1(float _speed);
+	void BoostSpeedS2(float _speed);
 };
 #endif
 

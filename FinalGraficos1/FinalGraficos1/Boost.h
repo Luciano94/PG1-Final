@@ -14,13 +14,14 @@ private:
 	sf::Texture * texture;
 	ObstacleManager * obsM;
 
-	void Init();
 	void Move(float dt);
 public:
 	Boost(int win);
 	~Boost();
 	void Update(float dt);
 	void Draw(sf::RenderWindow &win);
+	void Init();
+	sf::Vector2f GetPos();
 };
 #endif
 

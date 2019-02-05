@@ -22,7 +22,10 @@ private:
 	sf::Font fontKm;
 	sf::Text KMTxtP1;
 	sf::Text KMTxtP2;
-
+	//Win Player1
+	sf::Text winTxtP1;
+	//Win Player2
+	sf::Text winTxtP2;
 	GameManager * gm;
 	ObstacleManager * obsM;
 

@@ -11,6 +11,7 @@ class GameManager{
 private:
 	float timer;
 	DeltaTime * dt;
+	GameStates gS;
 
 	GameManager();
 	static GameManager * Instance;
@@ -18,8 +19,10 @@ public:
 	static GameManager * GetInstance();
 	~GameManager();
 	void Update();
+	void p1Win();
+	void p2Win();
 	float GetTime();
-
+	GameStates getActualState();
 };
 
 #endif // !GAMEMANAGER_H

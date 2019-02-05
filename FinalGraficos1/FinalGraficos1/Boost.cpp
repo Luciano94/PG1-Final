@@ -56,3 +56,7 @@ void Boost::Update(float dt){
 void Boost::Draw(sf::RenderWindow & win){
 	win.draw(boost);
 }
+
+sf::Vector2f Boost::GetPos(){
+	return boost.getPosition();
+}

@@ -18,3 +18,7 @@ void Player::Draw(sf::RenderWindow &win){
 	win.draw(character);
 }
 
+sf::Vector2f Player::GetPos(){
+	return character.getPosition();
+}
+

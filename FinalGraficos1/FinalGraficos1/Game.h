@@ -6,6 +6,7 @@
 #include "ObstacleManager.h"
 #include "InterfaceManager.h"
 #include "GameManager.h"
+#include "CollisionManager.h"
 #include "GlobalDefinitions.h"
 #include "DeltaTime.h"
 #include "Boost.h"
@@ -29,9 +30,11 @@ private:
 	ObstacleManager * ObsManager;
 	DeltaTime * dt;
 	GameManager * gm;
+	CollisionManager * cM;
 //methods	
 	void Draw();
 	void CallUpdates();
+	void CheckCollisions();
 public:
 	Game();
 	~Game();
