@@ -13,6 +13,7 @@ void Game::Start(){
 	UI = InterfaceManager::GetInstance();
 	gm = GameManager::GetInstance();
 	cM = CollisionManager::GetInstance();
+	iM = Input::GetInstance();
 	p1 = new Player1(P1_TEXTURE);
 	p2 = new Player2(P2_TEXTURE);
 	b1 = new Boost(W1_XL);
@@ -28,15 +29,13 @@ void Game::Update(){
 	while (window.isOpen())
 	{
 		sf::Event event;
-		while (window.pollEvent(event))
-		{
-			if (event.type == sf::Event::Closed)
+		while (window.pollEvent(event)){
+			if (event.type == sf::Event::Closed || gm->BeClose())
 				window.close();
 		}
 		window.clear();
 
 		CallUpdates();
-		CheckCollisions();
 		Draw();
 
 		window.display();
@@ -52,20 +51,20 @@ void Game::Draw(){
 	UI->Draw(window);
 	
 	switch (gm->getActualState()){
-		case Constants::Menu:
+		case GameStates::Menu:
 			break;
-		case Constants::Gameplay:
+		case GameStates::Gameplay:
 			p1->Draw(window);
 			p2->Draw(window);
 			b2->Draw(window);
 			b1->Draw(window);
 			ObsManager->Draw(window);
 			break;
-		case Constants::P1WinScreen:
+		case GameStates::P1WinScreen:
 			break;
-		case Constants::P2WinScreen:
+		case GameStates::P2WinScreen:
 			break;
-		case Constants::Count:
+		case GameStates::Count:
 			break;
 		default:
 			break;
@@ -73,28 +72,29 @@ void Game::Draw(){
 }
 
 void Game::CallUpdates(){
+	dt->Update();
+	gm->Update();
+	UI->Update();
+	iM->Update(dt->Get());
+
 	switch (gm->getActualState()) {
-	case Constants::Menu:
-		break;
-	case Constants::Gameplay:
+	case GameStates::Menu:
+	break;
+	case GameStates::Gameplay:
+		CheckCollisions();
 		b1->Update(dt->Get());
 		b2->Update(dt->Get());
 		ObsManager->Update(dt->Get());
 		p1->Update(dt->Get());
 		p2->Update(dt->Get());
 		break;
-	case Constants::P1WinScreen:
+	case GameStates::P1WinScreen:
 		break;
-	case Constants::P2WinScreen:
-		break;
-	case Constants::Count:
+	case GameStates::P2WinScreen:
 		break;
 	default:
 		break;
 	}
-	dt->Update();
-	gm->Update();
-	UI->Update();
 }
 
 void Game::CheckCollisions(){

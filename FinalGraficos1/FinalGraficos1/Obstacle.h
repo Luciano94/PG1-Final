@@ -25,6 +25,7 @@ public:
 	~Obstacle();
 	void Update(float dt);
 	void Draw(sf::RenderWindow &win);
+	void Reset();
 	void SetSpeed(float _speed);
 	sf::Vector2f GetPos();
 };

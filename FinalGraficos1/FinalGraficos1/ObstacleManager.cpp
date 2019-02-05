@@ -137,3 +137,16 @@ void ObstacleManager::CheckCollisions(Player1 * p1, Player2 * p2){
 		}
 	}
 }
+
+void ObstacleManager::Reset(){
+
+	for (list<Obstacle*>::iterator iter = listOfS1->begin();
+		iter != listOfS1->end(); ++iter) {
+		(*iter)->Reset();
+	}
+
+	for (list<Obstacle*>::iterator iter = listOfS2->begin();
+		iter != listOfS2->end(); ++iter) {
+		(*iter)->Reset();
+	}
+}

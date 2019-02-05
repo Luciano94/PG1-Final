@@ -10,6 +10,7 @@
 #include "GlobalDefinitions.h"
 #include "DeltaTime.h"
 #include "Boost.h"
+#include "Input.h"
 
 using namespace std;
 using namespace Constants;
@@ -26,6 +27,7 @@ private:
 	Boost * b1;
 	Boost * b2;
 
+	Input * iM;
 	InterfaceManager * UI;
 	ObstacleManager * ObsManager;
 	DeltaTime * dt;

@@ -38,6 +38,7 @@ public:
 	void Draw(sf::RenderWindow &win);
 	void Update(float dt);
 	void CheckCollisions(Player1 * p1, Player2 * p2);
+	void Reset();
 	float GetSpeedS1();
 	float GetSpeedS2();
 	void BoostSpeedS1(float _speed);

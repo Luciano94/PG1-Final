@@ -4,9 +4,19 @@
 using namespace std;
 
 namespace Constants {
+	//Menu Options
+	enum MenuOptions {
+		Play = 0,
+		HowTo,
+		Credits,
+		Exit,
+		Counts,
+	};
 	//States
 	enum GameStates {
 		Menu = 0,
+		HowToMenu,
+		CreditsMenu,
 		Gameplay,
 		P1WinScreen,
 		P2WinScreen,

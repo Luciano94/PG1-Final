@@ -1,6 +1,7 @@
 #ifndef INTERFACEMANAGER_H
 #define INTERFACEMANAGER_H
 #include <SFML/Graphics.hpp>
+#include <vector>
 #include "GameManager.h"
 #include "ObstacleManager.h"
 #include "GlobalDefinitions.h"
@@ -11,6 +12,11 @@ using namespace Constants;
 class InterfaceManager
 {
 private:
+	//Menu
+	sf::Text tittle;
+	vector<sf::Text> * options;
+	sf::Text actOpt;
+	MenuOptions menuOpt;
 	//Gameplay
 	sf::RectangleShape division;
 	sf::RectangleShape sideWalkW1XR;
@@ -35,6 +41,9 @@ private:
 public:
 	static InterfaceManager * GetInstance();
 	~InterfaceManager();
+	void ChangueOptionL();
+	void ChangueOptionR();
+	MenuOptions MenuOpt();
 	void Update();
 	void Draw(sf::RenderWindow &win);
 };

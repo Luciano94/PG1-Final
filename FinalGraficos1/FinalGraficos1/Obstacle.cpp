@@ -36,14 +36,17 @@ void Obstacle::Update(float dt){
 void Obstacle::Move(float dt){
 	if (obs.getPosition().y > -O_HEIGHT)
 		obs.move(0, -speed * dt);
-	else {
-		obs.setPosition(obs.getPosition().x, W_HEIGHT + O_HEIGHT);
-		isActive = false;
-	}
+	else 
+		Reset();
 }
 
 void Obstacle::Draw(sf::RenderWindow & win){
 	win.draw(obs);
+}
+
+void Obstacle::Reset(){
+	obs.setPosition(obs.getPosition().x, W_HEIGHT + O_HEIGHT);
+	isActive = false;
 }
 
 void Obstacle::SetSpeed(float _speed) {

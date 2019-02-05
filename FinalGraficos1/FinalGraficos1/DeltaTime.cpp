@@ -4,6 +4,7 @@ DeltaTime* DeltaTime::Instance = NULL;
 
 DeltaTime::DeltaTime(){
 	deltaTime = 0;
+	pause = false;
 }
 
 DeltaTime * DeltaTime::GetInstance(){
@@ -19,7 +20,12 @@ void DeltaTime::Update(){
 }
 
 float DeltaTime::Get(){
-	return deltaTime;
+	if (pause) return 0.0f;
+	else return deltaTime;
+}
+
+void DeltaTime::PauseGame(){
+	pause = !pause;
 }
 
 

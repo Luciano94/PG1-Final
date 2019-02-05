@@ -5,7 +5,8 @@ GameManager * GameManager::Instance = NULL;
 GameManager::GameManager(){
 	timer = 0;
 	dt = DeltaTime::GetInstance();
-	gS = GameStates::Gameplay;
+	gS = GameStates::Menu;
+	beClose = false;
 }
 
 GameManager * GameManager::GetInstance()
@@ -32,11 +33,36 @@ void GameManager::p2Win(){
 	gS = GameStates::P2WinScreen;
 }
 
-float GameManager::GetTime()
-{
+float GameManager::GetTime(){
 	return timer;
+}
+
+void GameManager::InitGame(){
+	gS = GameStates::Gameplay;
+	timer = 0;
+	beClose = false;
+}
+
+void GameManager::GoToMenu(){
+	gS = GameStates::Menu;
+}
+
+void GameManager::GoToCredits(){
+	gS = GameStates::CreditsMenu;
+}
+
+void GameManager::GoToHowTo(){
+	gS = GameStates::HowToMenu;
+}
+
+void GameManager::Exit(){
+	beClose = true;
 }
 
 GameStates GameManager::getActualState(){
 	return gS;
+}
+
+bool GameManager::BeClose(){
+	return beClose;
 }

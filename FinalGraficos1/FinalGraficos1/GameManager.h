@@ -12,6 +12,7 @@ private:
 	float timer;
 	DeltaTime * dt;
 	GameStates gS;
+	bool beClose;
 
 	GameManager();
 	static GameManager * Instance;
@@ -22,7 +23,13 @@ public:
 	void p1Win();
 	void p2Win();
 	float GetTime();
+	void InitGame();
+	void GoToMenu();
+	void GoToCredits();
+	void GoToHowTo();
+	void Exit();
 	GameStates getActualState();
+	bool BeClose();
 };
 
 #endif // !GAMEMANAGER_H

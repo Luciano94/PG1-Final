@@ -15,6 +15,30 @@ InterfaceManager::InterfaceManager(){
 	gm = GameManager::GetInstance();
 	/*ObstacleManager*/
 	obsM = ObstacleManager::GetInstance();
+	/*Menu*/
+	//Tittle
+	tittle.setFont(fontKm);
+	tittle.setString("DEATH RACE");
+	tittle.setCharacterSize(TITTLE_SIZE);
+	tittle.setFillColor(sf::Color::White);
+	tittle.setStyle(sf::Text::Bold);
+	tittle.setPosition(400, 100);
+	//options
+	options = new vector<sf::Text>(MenuOptions::Counts);
+	for (int i = 0; i < MenuOptions::Counts; i++){
+		options->at(i).setFont(fontKm);
+		options->at(i).setCharacterSize(FONT_SIZE);
+		options->at(i).setFillColor(sf::Color::White);
+		options->at(i).setStyle(sf::Text::Bold);
+		options->at(i).setPosition(400, 300);
+	}
+	options->at(0).setString("Play");
+	options->at(1).setString("How To Play");
+	options->at(2).setString("Credits");
+	options->at(3).setString("Exit");
+	menuOpt = MenuOptions::Play;
+	actOpt = options->at(menuOpt);
+
 	/*Windows 1 Env*/
 	sideWalkW1XR.setSize(sf::Vector2f(SW1R_WIDTH, SW1R_HEIGHT));
 	sideWalkW1XR.setFillColor(sf::Color::Blue);
@@ -70,22 +94,44 @@ InterfaceManager::InterfaceManager(){
 InterfaceManager::~InterfaceManager(){
 }
 
+void InterfaceManager::ChangueOptionL(){
+	if (menuOpt == MenuOptions::Play)
+		menuOpt = MenuOptions::Exit;
+	else
+		menuOpt = (MenuOptions)(menuOpt - 1);
+
+	actOpt = options->at(menuOpt);
+}
+
+void InterfaceManager::ChangueOptionR(){
+	if (menuOpt == MenuOptions::Exit)
+		menuOpt = MenuOptions::Play;
+	else
+		menuOpt = (MenuOptions)(menuOpt + 1);
+	
+	actOpt = options->at(menuOpt);
+}
+
+MenuOptions InterfaceManager::MenuOpt(){
+	return menuOpt;
+}
+
 void InterfaceManager::Update(){
 	string km;
 	switch (gm->getActualState()){
-	case Constants::Menu:
-		break;
-	case Constants::Gameplay:
+	case GameStates::Menu:
+	break;
+	case GameStates::Gameplay:
 		km = to_string((int)(gm->GetTime() * obsM->GetSpeedS1())/10) + " KM";
 		KMTxtP1.setString(km);
 		km = to_string((int)(gm->GetTime() * obsM->GetSpeedS2())/10) + " KM";
 		KMTxtP2.setString(km);
 		break;
-	case Constants::P1WinScreen:
+	case GameStates::P1WinScreen:
 		break;
-	case Constants::P2WinScreen:
+	case GameStates::P2WinScreen:
 		break;
-	case Constants::Count:
+	case GameStates::Count:
 		break;
 	default:
 		break;
@@ -95,9 +141,11 @@ void InterfaceManager::Update(){
 void InterfaceManager::Draw(sf::RenderWindow & win){
 	switch (gm->getActualState())
 	{
-	case Constants::Menu:
-		break;
-	case Constants::Gameplay:
+	case GameStates::Menu:
+		win.draw(tittle);
+		win.draw(actOpt);
+	break;
+	case GameStates::Gameplay:
 		win.draw(division);
 		win.draw(sideWalkW1XL);
 		win.draw(sideWalkW1XR);
@@ -106,13 +154,11 @@ void InterfaceManager::Draw(sf::RenderWindow & win){
 		win.draw(KMTxtP1);
 		win.draw(KMTxtP2);
 		break;
-	case Constants::P1WinScreen:
+	case GameStates::P1WinScreen:
 		win.draw(winTxtP1);
 		break;
-	case Constants::P2WinScreen:
+	case GameStates::P2WinScreen:
 		win.draw(winTxtP2);
-		break;
-	case Constants::Count:
 		break;
 	default:
 		break;
