@@ -12,7 +12,13 @@ using namespace Constants;
 class InterfaceManager
 {
 private:
-	//Menu
+	//credits
+	sf::RectangleShape creditsImg;
+	sf::Texture * creditsTexture;
+	//How To Menu
+	sf::RectangleShape howToImg;
+	sf::Texture * howToTexture;
+	//Main Menu 
 	sf::Text tittle;
 	vector<sf::Text> * options;
 	sf::Text actOpt;
@@ -32,9 +38,9 @@ private:
 	sf::Text winTxtP1;
 	//Win Player2
 	sf::Text winTxtP2;
+	//managers
 	GameManager * gm;
 	ObstacleManager * obsM;
-
 
 	InterfaceManager();
 	static InterfaceManager * Instance;

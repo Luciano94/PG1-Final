@@ -38,19 +38,23 @@ void Input::Update(float dt){
 			}
 			if (sf::Keyboard::isKeyPressed(sf::Keyboard::Enter)) {
 				
-				switch (UI->MenuOpt()){
+				switch (UI->MenuOpt()) {
 				case MenuOptions::Play:
 					gm->InitGame();
 					oM->Reset();
 					break;
 				case MenuOptions::HowTo:
-					//mostrar pantalla de controles
+					if (sf::Keyboard::isKeyPressed(sf::Keyboard::Enter)) {
+						gm->GoToHowTo();
+					}
 					break;
 				case MenuOptions::Exit:
 					gm->Exit();
 					break;
 				case MenuOptions::Credits:
-					//mostrar creditos
+					if (sf::Keyboard::isKeyPressed(sf::Keyboard::Enter)) {
+						gm->GoToCredits();
+					}
 					break;
 				default:
 					break;
@@ -80,6 +84,12 @@ void Input::Update(float dt){
 			}
 			break;
 		case GameStates::HowToMenu:
+			if (sf::Keyboard::isKeyPressed(sf::Keyboard::Escape)) {
+				gm->GoToMenu();
+				actInputDelay = 0.0f;
+			}
+			break;
+		case GameStates::CreditsMenu:
 			if (sf::Keyboard::isKeyPressed(sf::Keyboard::Escape)) {
 				gm->GoToMenu();
 				actInputDelay = 0.0f;

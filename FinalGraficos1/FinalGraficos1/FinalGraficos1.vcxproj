@@ -146,7 +146,9 @@ copy "$(SolutionDir)Libs\SFML\SFML-2.5.1-x64\\bin\sfml-window-d-2.dll" "$(OutDir
       <Command>copy "$(SolutionDir)Libs\SFML\SFML-2.5.1-x86\bin\sfml-graphics-2.dll" "$(OutDir)"
 copy "$(SolutionDir)Libs\SFML\SFML-2.5.1-x86\bin\sfml-system-2.dll" "$(OutDir)"
 copy "$(SolutionDir)Libs\SFML\SFML-2.5.1-x86\bin\sfml-audio-2.dll" "$(OutDir)"
-copy "$(SolutionDir)Libs\SFML\SFML-2.5.1-x86\bin\sfml-window-2.dll" "$(OutDir)"</Command>
+copy "$(SolutionDir)Libs\SFML\SFML-2.5.1-x86\bin\sfml-window-2.dll" "$(OutDir)"
+XCOPY "$(SolutionDir)Assets" "$(OutDir)..\Assets" /e/i
+</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -170,7 +172,8 @@ copy "$(SolutionDir)Libs\SFML\SFML-2.5.1-x86\bin\sfml-window-2.dll" "$(OutDir)"<
       <Command>copy "$(SolutionDir)Libs\SFML\SFML-2.5.1-x64\bin\sfml-graphics-2.dll" "$(OutDir)"
 copy "$(SolutionDir)Libs\SFML\SFML-2.5.1-x64\\bin\sfml-system-2.dll" "$(OutDir)"
 copy "$(SolutionDir)Libs\SFML\SFML-2.5.1-x64\\bin\sfml-audio-2.dll" "$(OutDir)"
-copy "$(SolutionDir)Libs\SFML\SFML-2.5.1-x64\\bin\sfml-window-2.dll" "$(OutDir)"</Command>
+copy "$(SolutionDir)Libs\SFML\SFML-2.5.1-x64\\bin\sfml-window-2.dll" "$(OutDir)"
+XCOPY "$(SolutionDir)Assets" "$(OutDir)..\Assets" /e/i</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>

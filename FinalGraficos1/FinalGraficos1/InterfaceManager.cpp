@@ -16,13 +16,30 @@ InterfaceManager::InterfaceManager(){
 	/*ObstacleManager*/
 	obsM = ObstacleManager::GetInstance();
 	/*Menu*/
+	//HowTo
+	howToTexture = new sf::Texture();
+	howToTexture->loadFromFile(HOW_TO_IMG);
+	howToImg.setSize(sf::Vector2f(MENU_WIDTH, MENU_HEIGHT));
+	howToImg.setTexture(howToTexture);
+	//credits
+	creditsTexture = new sf::Texture();
+	creditsTexture->loadFromFile(CREDITS_IMG);
+	creditsImg.setSize(sf::Vector2f(MENU_WIDTH, MENU_HEIGHT));
+	creditsImg.setTexture(howToTexture);
+	//credits
+	sideWalkW1XR.setSize(sf::Vector2f(SW1R_WIDTH, SW1R_HEIGHT));
+	sideWalkW1XR.setFillColor(sf::Color::Blue);
+	sideWalkW1XR.setPosition(SW1R_SPAWN_X, SW1R_SPAWN_Y);
+	sideWalkW1XL.setSize(sf::Vector2f(SW1L_WIDTH, SW1L_HEIGHT));
+	sideWalkW1XL.setFillColor(sf::Color::Blue);
+	sideWalkW1XL.setPosition(SW1L_SPAWN_X, SW1L_SPAWN_Y);
 	//Tittle
 	tittle.setFont(fontKm);
 	tittle.setString("DEATH RACE");
 	tittle.setCharacterSize(TITTLE_SIZE);
 	tittle.setFillColor(sf::Color::White);
 	tittle.setStyle(sf::Text::Bold);
-	tittle.setPosition(400, 100);
+	tittle.setPosition(TITTLE_X, TITTLE_Y);
 	//options
 	options = new vector<sf::Text>(MenuOptions::Counts);
 	for (int i = 0; i < MenuOptions::Counts; i++){
@@ -30,7 +47,7 @@ InterfaceManager::InterfaceManager(){
 		options->at(i).setCharacterSize(FONT_SIZE);
 		options->at(i).setFillColor(sf::Color::White);
 		options->at(i).setStyle(sf::Text::Bold);
-		options->at(i).setPosition(400, 300);
+		options->at(i).setPosition(OPT_X,OPT_Y);
 	}
 	options->at(0).setString("Play");
 	options->at(1).setString("How To Play");
@@ -92,6 +109,7 @@ InterfaceManager::InterfaceManager(){
 
 
 InterfaceManager::~InterfaceManager(){
+	delete options;
 }
 
 void InterfaceManager::ChangueOptionL(){
@@ -139,8 +157,13 @@ void InterfaceManager::Update(){
 }
 
 void InterfaceManager::Draw(sf::RenderWindow & win){
-	switch (gm->getActualState())
-	{
+	switch (gm->getActualState()){
+	case GameStates::HowToMenu:
+		win.draw(howToImg);
+	break;
+	case GameStates::CreditsMenu:
+		win.draw(creditsImg);
+	break;
 	case GameStates::Menu:
 		win.draw(tittle);
 		win.draw(actOpt);

@@ -33,15 +33,27 @@ namespace Constants {
 	const int W2_XL = 600;
 	const int W2_XR = 1200;
 	/*INTERFACE*/
+	const int MENU_WIDTH = 1200;
+	const int MENU_HEIGHT = 600;
+	//HowToMenu
+	const string HOW_TO_IMG = "../Assets/Image/HowToMenu.jpg";
+	//credits
+	const string CREDITS_IMG = "../Assets/Image/HowToMenu.jpg";
+	//options menu
+	const int OPT_X = 550;
+	const int OPT_Y = 300;
+	//Tittle
+	const int TITTLE_X = 400;
+	const int TITTLE_Y = 100;
+	const int TITTLE_SIZE = 62;
 	//Screen Division
 	const int DIV_WIDTH = 1;
 	const int DIV_HEIGHT = 600;
 	const int DIV_SPAWN_X = 599;
 	const int DIV_SPAWN_Y = 0;
 	//UI
-	const string KM_FONT = "../Assets/Fonts/destructobeambb_bold.ttf";
 	const int FONT_SIZE = 18;
-	const int TITTLE_SIZE = 62;
+	const string KM_FONT = "../Assets/Fonts/destructobeambb_bold.ttf";
 	const float KM_W1_X = 60;
 	const float KM_W2_X = 660;
 	//Enviroment W1
@@ -67,7 +79,7 @@ namespace Constants {
 	const int O_WIDTH = 60;
 	const int O_HEIGHT = 60;
 	const int O_RESPAWNTIME = 10;
-	const string O_TEXTURE = "../Assets/Sprites/Player.png";
+	const string O_TEXTURE = "../Assets/Sprites/Enemy.png";
 	/*BOOST*/
 	const int B_WIDTH = 60;
 	const int B_HEIGHT = 60;
@@ -78,7 +90,7 @@ namespace Constants {
 	const int B_SPAWNX1 = 200;
 	const int B_SPAWNX2 = 200;
 	const int B_PLUS_SPEED = 100;
-	const string B_TEXTURE = "../Assets/Sprites/Boost.png";
+	const string B_TEXTURE = "../Assets/Sprites/PowerUp.png";
 	/*PLAYER*/
 	const int P_WIDTH = 60;
 	const int P_HEIGHT = 60;
@@ -88,13 +100,13 @@ namespace Constants {
 	const int P1_SPAWN_Y = 60;
 	const int P1_LEFT_BOUNDING = 60;
 	const int P1_RIGTH_BOUNDING = 480;
-	const string P1_TEXTURE = "../Assets/Sprites/Player.png";
+	const string P1_TEXTURE = "../Assets/Sprites/Player1.png";
 	//player 2
 	const int P2_SPAWN_X = 870;
 	const int P2_SPAWN_Y = 60;
 	const int P2_LEFT_BOUNDING = 660;
 	const int P2_RIGTH_BOUNDING = 1080;
-	const string P2_TEXTURE = "../Assets/Sprites/Player.png";
+	const string P2_TEXTURE = "../Assets/Sprites/Player2.png";
 }
 
 #endif // !GLOBALDEFINITIONS_H
