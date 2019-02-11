@@ -12,7 +12,7 @@ namespace Constants {
 		Exit,
 		Counts,
 	};
-	//States
+	//Game States
 	enum GameStates {
 		Menu = 0,
 		HowToMenu,
@@ -35,12 +35,14 @@ namespace Constants {
 	/*INTERFACE*/
 	const int MENU_WIDTH = 1200;
 	const int MENU_HEIGHT = 600;
+	//Menu
+	const string MENU_IMG = "../Assets/Images/Menu.png";
 	//HowToMenu
-	const string HOW_TO_IMG = "../Assets/Image/HowToMenu.jpg";
+	const string HOW_TO_IMG = "../Assets/Images/HowToPlay.png";
 	//credits
-	const string CREDITS_IMG = "../Assets/Image/HowToMenu.jpg";
+	const string CREDITS_IMG = "../Assets/Images/Credits.png";
 	//options menu
-	const int OPT_X = 550;
+	const int OPT_X = 500;
 	const int OPT_Y = 300;
 	//Tittle
 	const int TITTLE_X = 400;
@@ -52,10 +54,13 @@ namespace Constants {
 	const int DIV_SPAWN_X = 599;
 	const int DIV_SPAWN_Y = 0;
 	//UI
-	const int FONT_SIZE = 18;
-	const string KM_FONT = "../Assets/Fonts/destructobeambb_bold.ttf";
+	const int FONT_SIZE = 24;
+	const string KM_FONT = "../Assets/Fonts/FSEX300.ttf";
 	const float KM_W1_X = 60;
 	const float KM_W2_X = 660;
+	//Enviroment
+	const string ENV_LEFT = "../Assets/Sprites/Env.png";
+	const string ENV_RIGTH = "../Assets/Sprites/Env2.png";
 	//Enviroment W1
 	const int SW1R_WIDTH = 60;
 	const int SW1R_HEIGHT = 600;
@@ -75,10 +80,11 @@ namespace Constants {
 	const int SW2L_SPAWN_X = 601;
 	const int SW2L_SPAWN_Y = 0;
 	/*OBSTACLE*/
-	const int O_SPEED = 200;
-	const int O_WIDTH = 60;
-	const int O_HEIGHT = 60;
-	const int O_RESPAWNTIME = 10;
+	const int O_SPEED_MIN = 300;
+	const int O_SPEED_MAX = 400;
+	const int O_WIDTH = 50;
+	const int O_HEIGHT = 50;
+	const int O_RESPAWNTIME = 5;
 	const string O_TEXTURE = "../Assets/Sprites/Enemy.png";
 	/*BOOST*/
 	const int B_WIDTH = 60;

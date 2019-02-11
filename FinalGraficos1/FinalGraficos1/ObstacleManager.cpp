@@ -11,8 +11,8 @@ ObstacleManager * ObstacleManager::GetInstance(){
 
 ObstacleManager::ObstacleManager(){
 	srand((unsigned)time(0));
-	obsSpeedS1 = O_SPEED;
-	obsSpeedS2 = O_SPEED;
+	obsSpeedS1 = O_SPEED_MIN;
+	obsSpeedS2 = O_SPEED_MIN;
 	cM = CollisionManager::GetInstance();
 	gM = GameManager::GetInstance();
 	CreateListOfS1();
@@ -94,18 +94,16 @@ float ObstacleManager::GetSpeedS2() {
 
 void ObstacleManager::BoostSpeedS1(float _speed){
 	cout << obsSpeedS1 << endl;
-	obsSpeedS1 += _speed;
 	for (list<Obstacle*>::iterator iter = listOfS1->begin();
 		iter != listOfS1->end(); ++iter)
-		(*iter)->SetSpeed(obsSpeedS1);
+		(*iter)->SetSpeed(_speed);
 }
 
 void ObstacleManager::BoostSpeedS2(float _speed){
 	cout << obsSpeedS2 << endl;
-	obsSpeedS2 += _speed;
 	for (list<Obstacle*>::iterator iter = listOfS2->begin();
 		iter != listOfS2->end(); ++iter)
-		(*iter)->SetSpeed(obsSpeedS2);
+		(*iter)->SetSpeed(_speed);
 }
 
 void ObstacleManager::UpdateObs(float dt){

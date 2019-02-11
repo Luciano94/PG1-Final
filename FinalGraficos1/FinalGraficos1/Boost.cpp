@@ -25,6 +25,14 @@ void Boost::Init(){
 	isActive = false;
 }
 
+void Boost::Reset(){
+	boost.setPosition(-B_WIDTH, -B_HEIGHT);
+	respawn = (float)(rand() % B_MAXTIME) + B_MINTIME;
+	speed = (float)(rand() % B_SPEEDMIN) + B_SPEEDMAX;
+	actTime = 0;
+	isActive = false;
+}
+
 void Boost::Move(float dt){
 	if (boost.getPosition().y > -B_HEIGHT) {
 		boost.move(0, -speed * dt);

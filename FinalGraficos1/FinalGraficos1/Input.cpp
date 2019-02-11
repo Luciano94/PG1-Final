@@ -31,72 +31,68 @@ void Input::Update(float dt){
 				UI->ChangueOptionL();
 				actInputDelay = 0.0f;
 			}
-
 			if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right)) {
 				UI->ChangueOptionR();
-				actInputDelay = 0.0f;
-			}
-			if (sf::Keyboard::isKeyPressed(sf::Keyboard::Enter)) {
-				
-				switch (UI->MenuOpt()) {
-				case MenuOptions::Play:
-					gm->InitGame();
-					oM->Reset();
-					break;
-				case MenuOptions::HowTo:
-					if (sf::Keyboard::isKeyPressed(sf::Keyboard::Enter)) {
-						gm->GoToHowTo();
-					}
-					break;
-				case MenuOptions::Exit:
-					gm->Exit();
-					break;
-				case MenuOptions::Credits:
-					if (sf::Keyboard::isKeyPressed(sf::Keyboard::Enter)) {
-						gm->GoToCredits();
-					}
-					break;
-				default:
-					break;
-				}
 				actInputDelay = 0.0f;
 			}
 			if (sf::Keyboard::isKeyPressed(sf::Keyboard::Escape)) {
 				gm->Exit();
 			}
-			break;
+			if (sf::Keyboard::isKeyPressed(sf::Keyboard::Enter)) {	
+				switch (UI->MenuOpt()) {
+					case MenuOptions::Play:
+						gm->InitGame();
+						oM->Reset();
+					break;
+					case MenuOptions::HowTo:
+						if (sf::Keyboard::isKeyPressed(sf::Keyboard::Enter)) {
+							gm->GoToHowTo();
+						}
+					break;
+					case MenuOptions::Exit:
+						if (sf::Keyboard::isKeyPressed(sf::Keyboard::Enter)) {
+							gm->Exit();
+						}
+					break;
+					case MenuOptions::Credits:
+						if (sf::Keyboard::isKeyPressed(sf::Keyboard::Enter)) {
+							gm->GoToCredits();
+						}
+					break;
+				}
+				actInputDelay = 0.0f;
+			}
+		break;
 		case GameStates::Gameplay:
 			if (sf::Keyboard::isKeyPressed(sf::Keyboard::P)) {
 				dT->PauseGame();
 				actInputDelay = 1.0f;
 			}
-			break;
+		break;
 		case GameStates::P1WinScreen:
 			if (sf::Keyboard::isKeyPressed(sf::Keyboard::Escape)) {
 				gm->GoToMenu();
 				actInputDelay = 0.0f;
 			}
-			break;
+		break;
 		case GameStates::P2WinScreen:
 			if (sf::Keyboard::isKeyPressed(sf::Keyboard::Escape)) {
 				gm->GoToMenu();
 				actInputDelay = 0.0f;
 			}
-			break;
+		break;
 		case GameStates::HowToMenu:
 			if (sf::Keyboard::isKeyPressed(sf::Keyboard::Escape)) {
 				gm->GoToMenu();
 				actInputDelay = 0.0f;
 			}
-			break;
+		break;
 		case GameStates::CreditsMenu:
 			if (sf::Keyboard::isKeyPressed(sf::Keyboard::Escape)) {
 				gm->GoToMenu();
 				actInputDelay = 0.0f;
 			}
-			break;
-		default:
-			break;
+		break;
 		}
 	}
 }

@@ -25,21 +25,12 @@ InterfaceManager::InterfaceManager(){
 	creditsTexture = new sf::Texture();
 	creditsTexture->loadFromFile(CREDITS_IMG);
 	creditsImg.setSize(sf::Vector2f(MENU_WIDTH, MENU_HEIGHT));
-	creditsImg.setTexture(howToTexture);
-	//credits
-	sideWalkW1XR.setSize(sf::Vector2f(SW1R_WIDTH, SW1R_HEIGHT));
-	sideWalkW1XR.setFillColor(sf::Color::Blue);
-	sideWalkW1XR.setPosition(SW1R_SPAWN_X, SW1R_SPAWN_Y);
-	sideWalkW1XL.setSize(sf::Vector2f(SW1L_WIDTH, SW1L_HEIGHT));
-	sideWalkW1XL.setFillColor(sf::Color::Blue);
-	sideWalkW1XL.setPosition(SW1L_SPAWN_X, SW1L_SPAWN_Y);
+	creditsImg.setTexture(creditsTexture);
 	//Tittle
-	tittle.setFont(fontKm);
-	tittle.setString("DEATH RACE");
-	tittle.setCharacterSize(TITTLE_SIZE);
-	tittle.setFillColor(sf::Color::White);
-	tittle.setStyle(sf::Text::Bold);
-	tittle.setPosition(TITTLE_X, TITTLE_Y);
+	menuTexture = new sf::Texture();
+	menuTexture->loadFromFile(MENU_IMG);
+	menuImg.setSize(sf::Vector2f(MENU_WIDTH, MENU_HEIGHT));
+	menuImg.setTexture(menuTexture);
 	//options
 	options = new vector<sf::Text>(MenuOptions::Counts);
 	for (int i = 0; i < MenuOptions::Counts; i++){
@@ -49,26 +40,30 @@ InterfaceManager::InterfaceManager(){
 		options->at(i).setStyle(sf::Text::Bold);
 		options->at(i).setPosition(OPT_X,OPT_Y);
 	}
-	options->at(0).setString("Play");
-	options->at(1).setString("How To Play");
-	options->at(2).setString("Credits");
-	options->at(3).setString("Exit");
+	options->at(0).setString("<    Play     >");
+	options->at(1).setString("< How To Play >");
+	options->at(2).setString("<   Credits   >");
+	options->at(3).setString("<    Exit     >");
 	menuOpt = MenuOptions::Play;
 	actOpt = options->at(menuOpt);
-
+	/*Enviroment*/
+	sideWalkLeft = new sf::Texture();
+	sideWalkRigth = new sf::Texture();
+	sideWalkLeft->loadFromFile(ENV_LEFT);
+	sideWalkRigth->loadFromFile(ENV_RIGTH);
 	/*Windows 1 Env*/
 	sideWalkW1XR.setSize(sf::Vector2f(SW1R_WIDTH, SW1R_HEIGHT));
-	sideWalkW1XR.setFillColor(sf::Color::Blue);
+	sideWalkW1XR.setTexture(sideWalkRigth);
 	sideWalkW1XR.setPosition(SW1R_SPAWN_X, SW1R_SPAWN_Y);
 	sideWalkW1XL.setSize(sf::Vector2f(SW1L_WIDTH, SW1L_HEIGHT));
-	sideWalkW1XL.setFillColor(sf::Color::Blue);
+	sideWalkW1XL.setTexture(sideWalkLeft);
 	sideWalkW1XL.setPosition(SW1L_SPAWN_X, SW1L_SPAWN_Y);
 	/*Windows 2 Env*/
 	sideWalkW2XR.setSize(sf::Vector2f(SW2R_WIDTH, SW2R_HEIGHT));
-	sideWalkW2XR.setFillColor(sf::Color::Blue);
+	sideWalkW2XR.setTexture(sideWalkRigth);
 	sideWalkW2XR.setPosition(SW2R_SPAWN_X, SW2R_SPAWN_Y);
 	sideWalkW2XL.setSize(sf::Vector2f(SW2L_WIDTH, SW2L_HEIGHT));
-	sideWalkW2XL.setFillColor(sf::Color::Blue);
+	sideWalkW2XL.setTexture(sideWalkLeft);
 	sideWalkW2XL.setPosition(SW2L_SPAWN_X, SW2L_SPAWN_Y);
 	/*screen division*/
 	division.setSize(sf::Vector2f(DIV_WIDTH, DIV_HEIGHT));
@@ -165,7 +160,7 @@ void InterfaceManager::Draw(sf::RenderWindow & win){
 		win.draw(creditsImg);
 	break;
 	case GameStates::Menu:
-		win.draw(tittle);
+		win.draw(menuImg);
 		win.draw(actOpt);
 	break;
 	case GameStates::Gameplay:

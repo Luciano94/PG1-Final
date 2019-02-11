@@ -87,11 +87,15 @@ void Game::CallUpdates(){
 		ObsManager->Update(dt->Get());
 		p1->Update(dt->Get());
 		p2->Update(dt->Get());
-		break;
+	break;
 	case GameStates::P1WinScreen:
-		break;
+		b1->Reset();
+		b2->Reset();
+	break;
 	case GameStates::P2WinScreen:
-		break;
+		b1->Reset();
+		b2->Reset();
+	break;
 	default:
 		break;
 	}

@@ -19,11 +19,14 @@ private:
 	sf::RectangleShape howToImg;
 	sf::Texture * howToTexture;
 	//Main Menu 
-	sf::Text tittle;
+	sf::RectangleShape menuImg;
+	sf::Texture * menuTexture;
 	vector<sf::Text> * options;
 	sf::Text actOpt;
 	MenuOptions menuOpt;
 	//Gameplay
+	sf::Texture * sideWalkLeft;
+	sf::Texture * sideWalkRigth;
 	sf::RectangleShape division;
 	sf::RectangleShape sideWalkW1XR;
 	sf::RectangleShape sideWalkW1XL;

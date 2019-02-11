@@ -21,6 +21,7 @@ public:
 	void Update(float dt);
 	void Draw(sf::RenderWindow &win);
 	void Init();
+	void Reset();
 	sf::Vector2f GetPos();
 };
 #endif
