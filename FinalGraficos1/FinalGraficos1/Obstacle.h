@@ -12,6 +12,7 @@ class Obstacle{
 private:
 	/*ATTRIBUTES*/
 	float speed;
+	float boostSpeed;
 	float respawn;
 	float actTime;
 	bool isActive;

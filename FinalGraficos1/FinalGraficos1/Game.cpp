@@ -108,11 +108,13 @@ void Game::CheckCollisions(){
 		P_WIDTH, P_HEIGHT, B_WIDTH, B_HEIGHT)) {
 		b1->Init();
 		ObsManager->BoostSpeedS2(B_PLUS_SPEED);
+		UI->PlusCarsP2();
 	}
 
 	if (cM->DetectCollision(p2->GetPos(), b2->GetPos(),
 		P_WIDTH, P_HEIGHT, B_WIDTH, B_HEIGHT)) {
 		b2->Init();
 		ObsManager->BoostSpeedS1(B_PLUS_SPEED);
+		UI->PlusCarsP1();
 	}
 }

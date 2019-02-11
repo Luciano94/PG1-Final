@@ -57,6 +57,8 @@ namespace Constants {
 	const int FONT_SIZE = 24;
 	const string KM_FONT = "../Assets/Fonts/FSEX300.ttf";
 	const float KM_W1_X = 60;
+	const float CAR_W1_X = 190;
+	const float CAR_W2_X = 790;
 	const float KM_W2_X = 660;
 	//Enviroment
 	const string ENV_LEFT = "../Assets/Sprites/Env.png";
@@ -80,22 +82,22 @@ namespace Constants {
 	const int SW2L_SPAWN_X = 601;
 	const int SW2L_SPAWN_Y = 0;
 	/*OBSTACLE*/
-	const int O_SPEED_MIN = 300;
-	const int O_SPEED_MAX = 400;
+	const int O_SPEED_MIN = 200;
+	const int O_SPEED_MAX = 300;
 	const int O_WIDTH = 50;
 	const int O_HEIGHT = 50;
-	const int O_RESPAWNTIME = 5;
+	const int O_RESPAWNTIME = 10;
 	const string O_TEXTURE = "../Assets/Sprites/Enemy.png";
 	/*BOOST*/
 	const int B_WIDTH = 60;
 	const int B_HEIGHT = 60;
 	const int B_SPEEDMIN = 200;
-	const int B_SPEEDMAX = 250;
+	const int B_SPEEDMAX = 300;
 	const int B_MINTIME = 10;
-	const int B_MAXTIME = 30;
+	const int B_MAXTIME = 20;
 	const int B_SPAWNX1 = 200;
 	const int B_SPAWNX2 = 200;
-	const int B_PLUS_SPEED = 100;
+	const int B_PLUS_SPEED = 50;
 	const string B_TEXTURE = "../Assets/Sprites/PowerUp.png";
 	/*PLAYER*/
 	const int P_WIDTH = 60;

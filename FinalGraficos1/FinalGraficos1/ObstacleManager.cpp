@@ -93,14 +93,12 @@ float ObstacleManager::GetSpeedS2() {
 }
 
 void ObstacleManager::BoostSpeedS1(float _speed){
-	cout << obsSpeedS1 << endl;
 	for (list<Obstacle*>::iterator iter = listOfS1->begin();
 		iter != listOfS1->end(); ++iter)
 		(*iter)->SetSpeed(_speed);
 }
 
 void ObstacleManager::BoostSpeedS2(float _speed){
-	cout << obsSpeedS2 << endl;
 	for (list<Obstacle*>::iterator iter = listOfS2->begin();
 		iter != listOfS2->end(); ++iter)
 		(*iter)->SetSpeed(_speed);

@@ -6,6 +6,7 @@ Obstacle::Obstacle(float posX){
 	obs.setSize(sf::Vector2f(O_WIDTH, O_HEIGHT));
 	obs.setTexture(texture);
 	obs.setPosition(posX, W_HEIGHT + O_HEIGHT);
+	boostSpeed = 0;
 	Init();
 }
 
@@ -37,7 +38,7 @@ void Obstacle::Update(float dt){
 
 void Obstacle::Move(float dt){
 	if (obs.getPosition().y > -O_HEIGHT)
-		obs.move(0, -speed * dt);
+		obs.move(0, -(speed + boostSpeed) * dt);
 	else 
 		Reset();
 }
@@ -52,7 +53,7 @@ void Obstacle::Reset(){
 }
 
 void Obstacle::SetSpeed(float _speed) {
-	speed += _speed;
+	boostSpeed += _speed;
 }
 
 sf::Vector2f Obstacle::GetPos(){

@@ -27,6 +27,7 @@ private:
 	//Gameplay
 	sf::Texture * sideWalkLeft;
 	sf::Texture * sideWalkRigth;
+	sf::Texture * carTexture;
 	sf::RectangleShape division;
 	sf::RectangleShape sideWalkW1XR;
 	sf::RectangleShape sideWalkW1XL;
@@ -34,9 +35,13 @@ private:
 	sf::RectangleShape sideWalkW2XL;
 	sf::RectangleShape yellowLineW1;
 	sf::RectangleShape yellowLineW2;
+	sf::RectangleShape carPinkP1;
+	sf::RectangleShape carPinkP2;
 	sf::Font fontKm;
 	sf::Text KMTxtP1;
 	sf::Text KMTxtP2;
+	int carsP1;
+	int carsP2;
 	//Win Player1
 	sf::Text winTxtP1;
 	//Win Player2
@@ -54,6 +59,8 @@ public:
 	void ChangueOptionR();
 	MenuOptions MenuOpt();
 	void Update();
+	void PlusCarsP1();
+	void PlusCarsP2();
 	void Draw(sf::RenderWindow &win);
 };
 #endif

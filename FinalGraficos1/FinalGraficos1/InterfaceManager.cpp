@@ -72,19 +72,29 @@ InterfaceManager::InterfaceManager(){
 	/*kilometer font*/
 	fontKm.loadFromFile(KM_FONT);
 	/*Kilometer text player 1*/
+	carsP1 = 0;
 	KMTxtP1.setFont(fontKm);
-	KMTxtP1.setString("0 KM");
+	KMTxtP1.setString("0 KMx0");
 	KMTxtP1.setCharacterSize(FONT_SIZE);
 	KMTxtP1.setFillColor(sf::Color::White);
 	KMTxtP1.setStyle(sf::Text::Bold);
 	KMTxtP1.setPosition(KM_W1_X,0);
+	carTexture = new sf::Texture();
+	carTexture->loadFromFile(B_TEXTURE);
+	carPinkP1.setSize(sf::Vector2f(B_WIDTH/2, B_HEIGHT/2));
+	carPinkP1.setTexture(carTexture);
+	carPinkP1.setPosition(CAR_W1_X, 0);
 	/*Kilometer text player 2*/
+	carsP2 = 0;
 	KMTxtP2.setFont(fontKm);
-	KMTxtP2.setString("0 KM");
+	KMTxtP2.setString("0 KMx0");
 	KMTxtP2.setCharacterSize(FONT_SIZE);
 	KMTxtP2.setFillColor(sf::Color::White);
 	KMTxtP2.setStyle(sf::Text::Bold);
 	KMTxtP2.setPosition(KM_W2_X, 0);
+	carPinkP2.setSize(sf::Vector2f(B_WIDTH / 2, B_HEIGHT / 2));
+	carPinkP2.setTexture(carTexture);
+	carPinkP2.setPosition(CAR_W2_X, 0);
 	/*WinTxt P1*/
 	winTxtP1.setFont(fontKm);
 	winTxtP1.setString("PLAYER 1 WIN");
@@ -135,20 +145,32 @@ void InterfaceManager::Update(){
 	case GameStates::Menu:
 	break;
 	case GameStates::Gameplay:
-		km = to_string((int)(gm->GetTime() * obsM->GetSpeedS1())/10) + " KM";
+		km = to_string((int)(gm->GetTime() * obsM->GetSpeedS1())/10) + " KMx" + to_string(carsP1);
 		KMTxtP1.setString(km);
-		km = to_string((int)(gm->GetTime() * obsM->GetSpeedS2())/10) + " KM";
+		km = to_string((int)(gm->GetTime() * obsM->GetSpeedS2())/10) + " KMx" + to_string(carsP2);
 		KMTxtP2.setString(km);
 		break;
 	case GameStates::P1WinScreen:
-		break;
+		carsP1 = 0;
+		carsP2 = 0;
+	break;
 	case GameStates::P2WinScreen:
-		break;
+		carsP1 = 0;
+		carsP2 = 0;
+	break;
 	case GameStates::Count:
 		break;
 	default:
 		break;
 	}
+}
+
+void InterfaceManager::PlusCarsP1(){
+	carsP1++;
+}
+
+void InterfaceManager::PlusCarsP2(){
+	carsP2++;
 }
 
 void InterfaceManager::Draw(sf::RenderWindow & win){
@@ -171,6 +193,8 @@ void InterfaceManager::Draw(sf::RenderWindow & win){
 		win.draw(sideWalkW2XR);
 		win.draw(KMTxtP1);
 		win.draw(KMTxtP2);
+		win.draw(carPinkP1);
+		win.draw(carPinkP2);
 		break;
 	case GameStates::P1WinScreen:
 		win.draw(winTxtP1);
