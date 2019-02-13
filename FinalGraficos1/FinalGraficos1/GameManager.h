@@ -3,6 +3,7 @@
 #include <SFML/Graphics.hpp>
 #include "DeltaTime.h"
 #include "GlobalDefinitions.h"
+#include "SoundManager.h"
 
 using namespace std;
 using namespace Constants;
@@ -11,6 +12,7 @@ class GameManager{
 private:
 	float timer;
 	DeltaTime * dt;
+	SoundManager * sM;
 	GameStates gS;
 	bool beClose;
 

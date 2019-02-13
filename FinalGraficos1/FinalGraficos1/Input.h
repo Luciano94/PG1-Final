@@ -4,6 +4,7 @@
 #include "GameManager.h"
 #include "DeltaTime.h"
 #include "InterfaceManager.h"
+#include "SoundManager.h"
 #include "ObstacleManager.h"
 #include <SFML/Graphics.hpp>
 
@@ -17,6 +18,7 @@ private:
 	InterfaceManager * UI;
 	DeltaTime * dT;
 	ObstacleManager * oM;
+	SoundManager * sM;
 	
 	float inputDelay;
 	float actInputDelay;

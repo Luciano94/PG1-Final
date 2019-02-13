@@ -14,6 +14,7 @@ Input::Input(){
 	UI = InterfaceManager::GetInstance();
 	dT = DeltaTime::GetInstance();
 	oM = ObstacleManager::GetInstance();
+	sM = SoundManager::GetInstance();
 	inputDelay = 0.2f;
 	actInputDelay = 0.0f;
 }
@@ -29,16 +30,19 @@ void Input::Update(float dt){
 		case GameStates::Menu:
 			if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left)) {
 				UI->ChangueOptionL();
+				sM->PlaySelectSound();
 				actInputDelay = 0.0f;
 			}
 			if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right)) {
 				UI->ChangueOptionR();
+				sM->PlaySelectSound();
 				actInputDelay = 0.0f;
 			}
 			if (sf::Keyboard::isKeyPressed(sf::Keyboard::Escape)) {
 				gm->Exit();
 			}
-			if (sf::Keyboard::isKeyPressed(sf::Keyboard::Enter)) {	
+			if (sf::Keyboard::isKeyPressed(sf::Keyboard::Enter)) {
+				sM->PlayEnterSound();
 				switch (UI->MenuOpt()) {
 					case MenuOptions::Play:
 						gm->InitGame();

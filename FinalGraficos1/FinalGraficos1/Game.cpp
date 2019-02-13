@@ -14,6 +14,7 @@ void Game::Start(){
 	gm = GameManager::GetInstance();
 	cM = CollisionManager::GetInstance();
 	iM = Input::GetInstance();
+	sM = SoundManager::GetInstance();
 	p1 = new Player1(P1_TEXTURE);
 	p2 = new Player2(P2_TEXTURE);
 	b1 = new Boost(W1_XL);
@@ -79,8 +80,10 @@ void Game::CallUpdates(){
 
 	switch (gm->getActualState()) {
 	case GameStates::Menu:
+		sM->PlayMenuMusic();
 	break;
 	case GameStates::Gameplay:
+		sM->PlayGameplayMusic();
 		CheckCollisions();
 		b1->Update(dt->Get());
 		b2->Update(dt->Get());
@@ -109,6 +112,7 @@ void Game::CheckCollisions(){
 		b1->Init();
 		ObsManager->BoostSpeedS2(B_PLUS_SPEED);
 		UI->PlusCarsP2();
+		sM->PlayPowerUpSound();
 	}
 
 	if (cM->DetectCollision(p2->GetPos(), b2->GetPos(),
@@ -116,5 +120,6 @@ void Game::CheckCollisions(){
 		b2->Init();
 		ObsManager->BoostSpeedS1(B_PLUS_SPEED);
 		UI->PlusCarsP1();
+		sM->PlayPowerUpSound();
 	}
 }

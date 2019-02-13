@@ -8,6 +8,7 @@
 #include "GameManager.h"
 #include "CollisionManager.h"
 #include "GlobalDefinitions.h"
+#include "SoundManager.h"
 #include "DeltaTime.h"
 #include "Boost.h"
 #include "Input.h"
@@ -27,6 +28,7 @@ private:
 	Boost * b1;
 	Boost * b2;
 
+	SoundManager * sM;
 	Input * iM;
 	InterfaceManager * UI;
 	ObstacleManager * ObsManager;

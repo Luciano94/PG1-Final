@@ -5,6 +5,7 @@ GameManager * GameManager::Instance = NULL;
 GameManager::GameManager(){
 	timer = 0;
 	dt = DeltaTime::GetInstance();
+	sM = SoundManager::GetInstance();
 	gS = GameStates::Menu;
 	beClose = false;
 }
@@ -26,10 +27,14 @@ void GameManager::Update(){
 }
 
 void GameManager::p1Win(){
+	sM->StopAllMusic();
+	sM->PlayExplosionSound();
 	gS = GameStates::P1WinScreen;
 }
 
 void GameManager::p2Win(){
+	sM->StopAllMusic();
+	sM->PlayExplosionSound();
 	gS = GameStates::P2WinScreen;
 }
 

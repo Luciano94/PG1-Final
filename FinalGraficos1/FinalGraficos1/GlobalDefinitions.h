@@ -115,6 +115,17 @@ namespace Constants {
 	const int P2_LEFT_BOUNDING = 660;
 	const int P2_RIGTH_BOUNDING = 1080;
 	const string P2_TEXTURE = "../Assets/Sprites/Player2.png";
+
+	/*SOUND MANAGER*/
+	//sounds
+	const string S_ENTER= "../Assets/Sounds/Enter.wav";
+	const string S_SELECT = "../Assets/Sounds/Select.wav";
+	const string S_POWERUP = "../Assets/Sounds/PwUp.wav";
+	const string S_EXPLOSION = "../Assets/Sounds/Explosion.wav";
+	//music								
+	const string M_MENU = "../Assets/Sounds/MainMusic.wav";
+	const string M_GAMEPLAY = "../Assets/Sounds/GameplayMusic.wav";
+
 }
 
 #endif // !GLOBALDEFINITIONS_H

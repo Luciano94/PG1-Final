@@ -95,14 +95,15 @@
       <PreprocessorDefinitions>%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
-      <AdditionalDependencies>winmm.lib;opengl32.lib;sfml-graphics-d.lib;sfml-main-d.lib;sfml-window-d.lib;sfml-audio-d.lib;sfml-system-d.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>winmm.lib;opengl32.lib;openal32.lib;sfml-graphics-d.lib;sfml-main-d.lib;sfml-window-d.lib;sfml-audio-d.lib;sfml-system-d.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalLibraryDirectories>$(SolutionDir)Libs\SFML\SFML-2.5.1-x86\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
     <PostBuildEvent>
       <Command>copy "$(SolutionDir)Libs\SFML\SFML-2.5.1-x86\bin\sfml-graphics-d-2.dll" "$(OutDir)"
 copy "$(SolutionDir)Libs\SFML\SFML-2.5.1-x86\\bin\sfml-system-d-2.dll" "$(OutDir)"
 copy "$(SolutionDir)Libs\SFML\SFML-2.5.1-x86\\bin\sfml-audio-d-2.dll" "$(OutDir)"
-copy "$(SolutionDir)Libs\SFML\SFML-2.5.1-x86\\bin\sfml-window-d-2.dll" "$(OutDir)"</Command>
+copy "$(SolutionDir)Libs\SFML\SFML-2.5.1-x86\\bin\sfml-window-d-2.dll" "$(OutDir)"
+copy "$(SolutionDir)Libs\SFML\SFML-2.5.1-x86\\bin\openal32.dll" "$(OutDir)"</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -116,13 +117,14 @@ copy "$(SolutionDir)Libs\SFML\SFML-2.5.1-x86\\bin\sfml-window-d-2.dll" "$(OutDir
     </ClCompile>
     <Link>
       <AdditionalLibraryDirectories>$(SolutionDir)Libs\SFML\SFML-2.5.1-x64\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>winmm.lib;opengl32.lib;sfml-graphics-d.lib;sfml-main-d.lib;sfml-window-d.lib;sfml-audio-d.lib;sfml-system-d.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>winmm.lib;opengl32.lib;openal32.lib;sfml-graphics-d.lib;sfml-main-d.lib;sfml-window-d.lib;sfml-audio-d.lib;sfml-system-d.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <PostBuildEvent>
       <Command>copy "$(SolutionDir)Libs\SFML\SFML-2.5.1-x64\bin\sfml-graphics-d-2.dll" "$(OutDir)"
 copy "$(SolutionDir)Libs\SFML\SFML-2.5.1-x64\\bin\sfml-system-d-2.dll" "$(OutDir)"
 copy "$(SolutionDir)Libs\SFML\SFML-2.5.1-x64\\bin\sfml-audio-d-2.dll" "$(OutDir)"
-copy "$(SolutionDir)Libs\SFML\SFML-2.5.1-x64\\bin\sfml-window-d-2.dll" "$(OutDir)"</Command>
+copy "$(SolutionDir)Libs\SFML\SFML-2.5.1-x64\\bin\sfml-window-d-2.dll" "$(OutDir)"
+copy "$(SolutionDir)Libs\SFML\SFML-2.5.1-x64\\bin\openal32.dll" "$(OutDir)"</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -190,6 +192,7 @@ XCOPY "$(SolutionDir)Assets" "$(OutDir)..\Assets" /e/i</Command>
     <ClInclude Include="Player.h" />
     <ClInclude Include="Player1.h" />
     <ClInclude Include="Player2.h" />
+    <ClInclude Include="SoundManager.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Boost.cpp" />
@@ -205,6 +208,7 @@ XCOPY "$(SolutionDir)Assets" "$(OutDir)..\Assets" /e/i</Command>
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="Player1.cpp" />
     <ClCompile Include="Player2.cpp" />
+    <ClCompile Include="SoundManager.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
