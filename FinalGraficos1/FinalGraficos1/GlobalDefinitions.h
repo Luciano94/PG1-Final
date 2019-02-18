@@ -61,8 +61,7 @@ namespace Constants {
 	const float CAR_W2_X = 790;
 	const float KM_W2_X = 660;
 	//Enviroment
-	const string ENV_LEFT = "../Assets/Sprites/Env.png";
-	const string ENV_RIGTH = "../Assets/Sprites/Env2.png";
+	const string ENV_IMG = "../Assets/Images/Gameplay.png";
 	//Enviroment W1
 	const int SW1R_WIDTH = 60;
 	const int SW1R_HEIGHT = 600;
@@ -81,6 +80,7 @@ namespace Constants {
 	const int SW2L_HEIGHT = 600;
 	const int SW2L_SPAWN_X = 601;
 	const int SW2L_SPAWN_Y = 0;
+	
 	/*OBSTACLE*/
 	const int O_SPEED_MIN = 200;
 	const int O_SPEED_MAX = 300;
@@ -88,6 +88,7 @@ namespace Constants {
 	const int O_HEIGHT = 50;
 	const int O_RESPAWNTIME = 10;
 	const string O_TEXTURE = "../Assets/Sprites/Enemy.png";
+	
 	/*BOOST*/
 	const int B_WIDTH = 60;
 	const int B_HEIGHT = 60;
@@ -99,6 +100,7 @@ namespace Constants {
 	const int B_SPAWNX2 = 200;
 	const int B_PLUS_SPEED = 50;
 	const string B_TEXTURE = "../Assets/Sprites/PowerUp.png";
+	
 	/*PLAYER*/
 	const int P_WIDTH = 60;
 	const int P_HEIGHT = 60;

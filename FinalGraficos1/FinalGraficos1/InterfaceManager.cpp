@@ -47,28 +47,10 @@ InterfaceManager::InterfaceManager(){
 	menuOpt = MenuOptions::Play;
 	actOpt = options->at(menuOpt);
 	/*Enviroment*/
-	sideWalkLeft = new sf::Texture();
-	sideWalkRigth = new sf::Texture();
-	sideWalkLeft->loadFromFile(ENV_LEFT);
-	sideWalkRigth->loadFromFile(ENV_RIGTH);
-	/*Windows 1 Env*/
-	sideWalkW1XR.setSize(sf::Vector2f(SW1R_WIDTH, SW1R_HEIGHT));
-	sideWalkW1XR.setTexture(sideWalkRigth);
-	sideWalkW1XR.setPosition(SW1R_SPAWN_X, SW1R_SPAWN_Y);
-	sideWalkW1XL.setSize(sf::Vector2f(SW1L_WIDTH, SW1L_HEIGHT));
-	sideWalkW1XL.setTexture(sideWalkLeft);
-	sideWalkW1XL.setPosition(SW1L_SPAWN_X, SW1L_SPAWN_Y);
-	/*Windows 2 Env*/
-	sideWalkW2XR.setSize(sf::Vector2f(SW2R_WIDTH, SW2R_HEIGHT));
-	sideWalkW2XR.setTexture(sideWalkRigth);
-	sideWalkW2XR.setPosition(SW2R_SPAWN_X, SW2R_SPAWN_Y);
-	sideWalkW2XL.setSize(sf::Vector2f(SW2L_WIDTH, SW2L_HEIGHT));
-	sideWalkW2XL.setTexture(sideWalkLeft);
-	sideWalkW2XL.setPosition(SW2L_SPAWN_X, SW2L_SPAWN_Y);
-	/*screen division*/
-	division.setSize(sf::Vector2f(DIV_WIDTH, DIV_HEIGHT));
-	division.setFillColor(sf::Color::Magenta);
-	division.setPosition(DIV_SPAWN_X, DIV_SPAWN_Y);
+	environmentTexture = new sf::Texture();
+	environmentTexture->loadFromFile(ENV_IMG);
+	environmentImg.setSize(sf::Vector2f(MENU_WIDTH, MENU_HEIGHT));
+	environmentImg.setTexture(environmentTexture);
 	/*kilometer font*/
 	fontKm.loadFromFile(KM_FONT);
 	/*Kilometer text player 1*/
@@ -186,11 +168,7 @@ void InterfaceManager::Draw(sf::RenderWindow & win){
 		win.draw(actOpt);
 	break;
 	case GameStates::Gameplay:
-		win.draw(division);
-		win.draw(sideWalkW1XL);
-		win.draw(sideWalkW1XR);
-		win.draw(sideWalkW2XL);
-		win.draw(sideWalkW2XR);
+		win.draw(environmentImg);
 		win.draw(KMTxtP1);
 		win.draw(KMTxtP2);
 		win.draw(carPinkP1);

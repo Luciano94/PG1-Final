@@ -25,16 +25,9 @@ private:
 	sf::Text actOpt;
 	MenuOptions menuOpt;
 	//Gameplay
-	sf::Texture * sideWalkLeft;
-	sf::Texture * sideWalkRigth;
+	sf::RectangleShape environmentImg;
+	sf::Texture * environmentTexture;
 	sf::Texture * carTexture;
-	sf::RectangleShape division;
-	sf::RectangleShape sideWalkW1XR;
-	sf::RectangleShape sideWalkW1XL;
-	sf::RectangleShape sideWalkW2XR;
-	sf::RectangleShape sideWalkW2XL;
-	sf::RectangleShape yellowLineW1;
-	sf::RectangleShape yellowLineW2;
 	sf::RectangleShape carPinkP1;
 	sf::RectangleShape carPinkP2;
 	sf::Font fontKm;
