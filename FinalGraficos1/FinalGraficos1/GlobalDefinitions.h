@@ -85,7 +85,7 @@ namespace Constants {
 	const int O_SPEED_MIN = 200;
 	const int O_SPEED_MAX = 300;
 	const int O_WIDTH = 50;
-	const int O_HEIGHT = 50;
+	const int O_HEIGHT = 60;
 	const int O_RESPAWNTIME = 10;
 	const string O_TEXTURE = "../Assets/Sprites/Enemy.png";
 	
@@ -103,7 +103,7 @@ namespace Constants {
 	
 	/*PLAYER*/
 	const int P_WIDTH = 60;
-	const int P_HEIGHT = 60;
+	const int P_HEIGHT = 74;
 	const float P_SPEED = 500;
 	//player 1
 	const int P1_SPAWN_X = 270;

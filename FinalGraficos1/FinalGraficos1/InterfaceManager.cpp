@@ -1,5 +1,6 @@
 #include "InterfaceManager.h"
 
+
 InterfaceManager * InterfaceManager::Instance = NULL;
 
 InterfaceManager * InterfaceManager::GetInstance()
