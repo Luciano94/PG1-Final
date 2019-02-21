@@ -25,7 +25,6 @@ Input::~Input(){
 void Input::Update(float dt){
 	if (actInputDelay < inputDelay) actInputDelay += dt;
 	else {
-		cout << actInputDelay << endl;
 		switch (gm->getActualState()) {
 		case GameStates::Menu:
 			if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left)) {

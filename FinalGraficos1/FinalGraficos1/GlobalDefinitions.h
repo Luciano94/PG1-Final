@@ -36,11 +36,11 @@ namespace Constants {
 	const int MENU_WIDTH = 1200;
 	const int MENU_HEIGHT = 600;
 	//Menu
-	const string MENU_IMG = "../Assets/Images/Menu.png";
+	const string MENU_IMG = "Assets/Images/Menu.png";
 	//HowToMenu
-	const string HOW_TO_IMG = "../Assets/Images/HowToPlay.png";
+	const string HOW_TO_IMG = "Assets/Images/HowToPlay.png";
 	//credits
-	const string CREDITS_IMG = "../Assets/Images/Credits.png";
+	const string CREDITS_IMG = "Assets/Images/Credits.png";
 	//options menu
 	const int OPT_X = 500;
 	const int OPT_Y = 300;
@@ -55,13 +55,13 @@ namespace Constants {
 	const int DIV_SPAWN_Y = 0;
 	//UI
 	const int FONT_SIZE = 24;
-	const string KM_FONT = "../Assets/Fonts/FSEX300.ttf";
+	const string KM_FONT = "Assets/Fonts/FSEX300.ttf";
 	const float KM_W1_X = 60;
 	const float CAR_W1_X = 190;
 	const float CAR_W2_X = 790;
 	const float KM_W2_X = 660;
 	//Enviroment
-	const string ENV_IMG = "../Assets/Images/Gameplay.png";
+	const string ENV_IMG = "Assets/Images/Gameplay.png";
 	//Enviroment W1
 	const int SW1R_WIDTH = 60;
 	const int SW1R_HEIGHT = 600;
@@ -87,7 +87,7 @@ namespace Constants {
 	const int O_WIDTH = 50;
 	const int O_HEIGHT = 60;
 	const int O_RESPAWNTIME = 10;
-	const string O_TEXTURE = "../Assets/Sprites/Enemy.png";
+	const string O_TEXTURE = "Assets/Sprites/Enemy.png";
 	
 	/*BOOST*/
 	const int B_WIDTH = 60;
@@ -99,7 +99,7 @@ namespace Constants {
 	const int B_SPAWNX1 = 200;
 	const int B_SPAWNX2 = 200;
 	const int B_PLUS_SPEED = 50;
-	const string B_TEXTURE = "../Assets/Sprites/PowerUp.png";
+	const string B_TEXTURE = "Assets/Sprites/PowerUp.png";
 	
 	/*PLAYER*/
 	const int P_WIDTH = 60;
@@ -110,23 +110,23 @@ namespace Constants {
 	const int P1_SPAWN_Y = 60;
 	const int P1_LEFT_BOUNDING = 60;
 	const int P1_RIGTH_BOUNDING = 480;
-	const string P1_TEXTURE = "../Assets/Sprites/Player1.png";
+	const string P1_TEXTURE = "Assets/Sprites/Player1.png";
 	//player 2
 	const int P2_SPAWN_X = 870;
 	const int P2_SPAWN_Y = 60;
 	const int P2_LEFT_BOUNDING = 660;
 	const int P2_RIGTH_BOUNDING = 1080;
-	const string P2_TEXTURE = "../Assets/Sprites/Player2.png";
+	const string P2_TEXTURE = "Assets/Sprites/Player2.png";
 
 	/*SOUND MANAGER*/
 	//sounds
-	const string S_ENTER= "../Assets/Sounds/Enter.wav";
-	const string S_SELECT = "../Assets/Sounds/Select.wav";
-	const string S_POWERUP = "../Assets/Sounds/PwUp.wav";
-	const string S_EXPLOSION = "../Assets/Sounds/Explosion.wav";
+	const string S_ENTER= "Assets/Sounds/Enter.wav";
+	const string S_SELECT = "Assets/Sounds/Select.wav";
+	const string S_POWERUP = "Assets/Sounds/PwUp.wav";
+	const string S_EXPLOSION = "Assets/Sounds/Explosion.wav";
 	//music								
-	const string M_MENU = "../Assets/Sounds/MainMusic.wav";
-	const string M_GAMEPLAY = "../Assets/Sounds/GameplayMusic.wav";
+	const string M_MENU = "Assets/Sounds/MainMusic.wav";
+	const string M_GAMEPLAY = "Assets/Sounds/GameplayMusic.wav";
 
 }
 
